@@ -1,0 +1,17 @@
+.faq { display: grid; grid-template-columns: 1fr 1.25fr; gap: 70px; border-top: 1px solid var(--border); }
+.faq .section-heading { margin: 0; }
+.faq h2 { font-size: clamp(43px, 4.8vw, 68px); }
+.faq .section-description { max-width: 360px; }
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-item:first-child { border-top: 1px solid var(--border); }
+.faq-item button { background: transparent; color: var(--ink); border: 0; width: 100%; display: grid; grid-template-columns: 22px 1fr 18px; gap: 18px; align-items: center; text-align: left; font-size: 15px; line-height: 1.5; padding: 25px 0; }
+.faq-number { font-size: 10px; color: var(--muted); }
+.faq-item svg { color: var(--lime); transition: transform .3s; }
+.faq-item.open svg { transform: rotate(45deg); }
+.faq-item button:hover { color: var(--lime); }
+.faq-panel { display: grid; grid-template-rows: 0fr; opacity: 0; visibility: hidden; transition: grid-template-rows .35s, opacity .3s, visibility .35s; }
+.faq-panel > div { overflow: hidden; }
+.faq-panel p { color: var(--muted); padding: 0 36px 25px 40px; font-size: 14px; line-height: 1.75; }
+.faq-item.open .faq-panel { grid-template-rows: 1fr; opacity: 1; visibility: visible; }
+@media (max-width: 900px) { .faq { grid-template-columns: 1fr; gap: 36px; } }
+@media (max-width: 600px) { .faq-item button { font-size: 14px; gap: 12px; padding-block: 22px; } .faq-panel p { padding-inline: 34px 12px; font-size: 13px; } }
